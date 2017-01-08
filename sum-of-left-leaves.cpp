@@ -11,7 +11,6 @@ class Solution {
 public:
     int find_sum(TreeNode* root, int ans){
         if (root){
-            
             if (root->left){
                 if (root->left->left == NULL && root->left->right == NULL)
                     ans = ans + root->left->val;
