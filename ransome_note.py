@@ -16,7 +16,7 @@ class Solution(object):
         else:
             return True
         return False
-            
+         
         # d = {}
         # for i in magazine:
         #     if i in d:
