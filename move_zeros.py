@@ -11,4 +11,3 @@ class Solution(object):
                 index += 1
         for i in xrange(index, len(nums)):
             nums[i] = 0
-       
