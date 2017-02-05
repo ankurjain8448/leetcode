@@ -10,7 +10,6 @@ class Solution(object):
 	root = None
 	
 	def insert(self, x):
-		# print "inserting : ", x
 		node = TreeNode(x)
 		if not self.root:
 			self.root = node
@@ -44,16 +43,4 @@ class Solution(object):
 		:rtype: TreeNode
 		"""
 		self.binary_traverse(nums, 0, len(nums)-1)
-		# print self.root.val
-		self.preorder(self.root)
 		return self.root
-
-	def preorder(self, node):
-		if node:
-			print node.val
-			self.preorder(node.left)
-			self.preorder(node.right)
-
-arr = [1,2,3,4,5]
-obj = Solution()
-root = obj.sortedArrayToBST(arr)
