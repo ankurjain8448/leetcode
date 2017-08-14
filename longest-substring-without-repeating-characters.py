@@ -1,9 +1,4 @@
 class Solution(object):
-    def remove(self, s, dict, index):
-        m = min(dict.values())
-        for i in xrange(m , index):
-            if s[i] in dict:
-                dict.pop(s[i])
 
     def lengthOfLongestSubstring(self, s):
         """
@@ -11,12 +6,15 @@ class Solution(object):
         :rtype: int
         """
         ans = 0
+        start_index = 0
         d  = {}
         for index, val in enumerate(s):
             if val in d:
                 old_index = d[val]
                 ans = max(ans, len(d))
-                self.remove(s, d, old_index)
+                for i in xrange(start_index , old_index):
+                    d.pop(s[i], None)
+                start_index = old_index + 1
                 d[val] = index
             else:
                 d[val] = index
@@ -24,5 +22,5 @@ class Solution(object):
         return ans
         
 obj = Solution()
-a = "a"
+a = "bpfbhmipx"
 print obj.lengthOfLongestSubstring(a)
