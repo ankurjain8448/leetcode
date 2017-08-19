@@ -9,9 +9,15 @@ class Solution(object):
         """
         if not nums:
             return ['0->99']
-        ans = []
+
+        # this is to handle the corner case of the end
+        if nums[len(nums)-1] != 99:
+            nums.append(99)
+
         last = len(nums)
         num_should_be = 1
+
+        ans = []
         if nums[0] != 0:
             if nums[0] == 1:
                 ans.append("0")
@@ -32,14 +38,8 @@ class Solution(object):
             else:
                 num_should_be += 1
             start += 1
-        if nums[last-1] != 99:
-            if nums[last-1] +1 == 99:
-                ans.append("{}".format(99))
-            else:
-                ans.append("{}->{}".format(nums[last-1] +1, 99))
         return ans
 
 arr = [3, 50, 75, 76,77]
 obj = Solution()
 print obj.missingRanges(arr)
-        
