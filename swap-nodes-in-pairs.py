@@ -10,8 +10,9 @@ class Solution(object):
 		:type current: ListNode
 		:rtype: ListNode
 		"""
-		'''
+		''' pr p  q  r
 			0->1->2->3->4
+			pr q  p  r
 			0->2->1->3->4
 			0->2->1->4->3
 		'''
@@ -29,4 +30,3 @@ class Solution(object):
 			prev = p
 			p = r
 		return dummtHead.next
-			
