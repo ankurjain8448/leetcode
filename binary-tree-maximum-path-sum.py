@@ -7,7 +7,6 @@
 
 class Solution(object):
 	# https://leetcode.com/problems/binary-tree-maximum-path-sum/description
-	# Pending
 	def postorder(self, node):
 		if node:
 			l = self.postorder(node.left)
