@@ -8,13 +8,13 @@
 class Solution(object):
 	# https://leetcode.com/problems/binary-tree-maximum-path-sum/description
 	# Pending
-	max_sum = 0
 	def postorder(self, node):
 		if node:
 			l = self.postorder(node.left)
 			r = self.postorder(node.right)
 			self.max_sum = max(self.max_sum, l+r+node.val)
-			return max(l ,r) + node.val
+			return_val = max(l ,r) + node.val
+			return return_val if return_val > 0 else 0
 		return 0
 
 	def maxPathSum(self, root):
@@ -22,7 +22,8 @@ class Solution(object):
 		:type root: TreeNode
 		:rtype: int
 		"""
-		if root:
-			self.max_sum = root.val
+		if not root:
+			return 0
+		self.max_sum = root.val
 		self.postorder(root)
 		return self.max_sum
