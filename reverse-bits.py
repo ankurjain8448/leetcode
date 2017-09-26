@@ -6,8 +6,8 @@ class Solution:
         temp = n
         i = 31
         while n:
-            a[i] = n%2
-            n /= 2
+            a[i] = n&1
+            n = n >> 1
             i -= 1
         p = 1
         ans = 0
