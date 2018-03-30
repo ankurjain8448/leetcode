@@ -19,10 +19,11 @@ class MinStack(object):
 		if self.current_index == 0:
 			self.minstack.append(x)
 			return None
-		if x > self.minstack[-1]:
-			self.minstack.append(self.minstack[-1])
-		else:
-			self.minstack.append(x)
+		self.minstack.append(min(x, minstack[-1]))
+		# if x > self.minstack[-1]:
+		# 	self.minstack.append(self.minstack[-1])
+		# else:
+		# 	self.minstack.append(x)
 		return None
 
 

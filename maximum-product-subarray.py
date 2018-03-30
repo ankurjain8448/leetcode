@@ -1,20 +1,20 @@
-nums = [2,3,-2,4]
-n = len(nums)
-if n == 0:
-	return 0
-i = 0
-# while i < n and nums[i] < 0:
-# 	i += 1
-
-temp = 1
-ans = 1
-final_ans = 1
-while i < n:
-	val = nums[i]
-	if val < 0:
-		temp = temp*val
-	elif val > 0:
-		ans = ans*val
-	else:
-		pass
-	i+=1
+class Solution(object):
+    def maxProduct(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        maximum = nums[0]
+        minimum = nums[0]
+        # curr_max = maximum
+        actual_max = maximum
+        for i in nums[1:]:
+            old_max = maximum
+            old_min = minimum
+            maximum = max(i, old_max*i, old_min*i)
+            minimum = min(i, old_max*i, old_min*i)
+            actual_max = max(actual_max, maximum)
+        return actual_max
+                
+                
+        
