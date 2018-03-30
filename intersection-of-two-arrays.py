@@ -7,14 +7,6 @@ class Solution(object):
         """
         n1 = {}
         for i in nums1:
-            if i in n1:
-                n1[i] = True
-            else:
-                n1[i] = False
-        n2 = {}
-        for i in nums2:
-            if i in n1:
-                n2[i] = True
-            
-        return n2.keys()
+            n1[i] = True if i in n1 else False
+        return list({ i for i in nums2 if i in n1 })
         
